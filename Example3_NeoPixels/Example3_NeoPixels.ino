@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 
-#define pinPix 12 // WS2812에 연결하는데 사용하는 pin 번호
+#define pinPix 6 // WS2812에 연결하는데 사용하는 pin 번호
 #define numPix 16 // 링에 연결되어 있는 WS2812 LED 갯수
 
 // Parameter 1 = 링에 연결되어 있는 WS2812 LED 갯수
