@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial bt(2, 3); // RX, TX
+SoftwareSerial BTSerial(2, 3); // RX, TX
 
  
 int lightPin = 8;
@@ -16,13 +16,13 @@ void setup() {
   digitalWrite(lightPin,LOW);
 
   Serial.begin(9600);
-  bt.begin(9600);
+  BTSerial.begin(9600);
 
 }
 
 void loop() {
-  if(bt.available()){
-    String data = bt.readString();
+  if(BTSerial.available()){
+    String data = BTSerial.readString();
     Serial.println("[Log] 명령 수신완료 : "+data);
     execFunc(data);
     }
@@ -49,7 +49,7 @@ void turnOff(){
 
 void reportDist(){
   String result = "현재 감지된 거리는 " + String(getDist()) + " cm 입니다";
-  bt.print(result);
+  BTSerial.print(result);
   Serial.print("[Log] 원격 보고완료 : " + result);
 }
 int getDist(){
