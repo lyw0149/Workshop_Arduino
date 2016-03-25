@@ -11,25 +11,24 @@
 // NEO_GRB Pixels are wired for GRB bitstream (most NeoPixel products)
 // NEO_RGB Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 
-Adafruit_NeoPixel myLeds = Adafruit_NeoPixel(numPix, pinPix, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel myLeds = Adafruit_NeoPixel(numPix, pinPix, NEO_GRB + NEO_KHZ800);  //네오픽셀을 myLEDs 라는 이름으로 사용하겠다라는 선언
 
 void setup() {
-  myLeds.begin(); // Initialize the NeoPixel array in the Arduino's memory,
-  myLeds.show(); // turn all pixels off, and upload to ring or string
+  myLeds.begin(); // 네오픽셀을 아두이노 메모리에 로드한다.
 }
 
 void loop() {
   int pause = 100;
 
   for (int i=0; i<numPix; i++) { 
-    myLeds.setPixelColor(i,255,255,255);
-    myLeds.show();
-    delay(pause);
+    myLeds.setPixelColor(i,255,255,255);// i번째 LED 를 255/255/255 색으로 설정한다.
+    myLeds.show();                      //설정한 값을 적용한다.
+    delay(pause);                       //100ms 만큼 지연시간을 준다.
   }
 
   for (int i=0; i<numPix; i++) {
-    myLeds.setPixelColor(i,0,0,0);
-    myLeds.show();
-    delay(pause);
+    myLeds.setPixelColor(i,0,0,0);//i번째 LED 를 0/0/0 색으로 설정한다.
+    myLeds.show();                //설정한 값을 적용한다.
+    delay(pause);                 //100ms 만큼 지연시간을 준다.
   }
 }
